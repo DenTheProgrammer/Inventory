@@ -7,6 +7,8 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField]
     private List<InvTab> tabs;
+    [SerializeField]
+    public InvTab activeTab { private set; get; }
 
     public void AddItemToTheInventory(InvItem item)
     {
@@ -28,9 +30,23 @@ public class Inventory : MonoBehaviour
             tab.ClearTab();
         }
     }
+
+    public void ChangeActiveTab(InvTab tab)
+    {
+        activeTab.HideTab();
+        activeTab = tab;
+        activeTab.DrawTab();
+    }
+
     private void DrawInventory()
     {
+        activeTab.DrawTab();
+    }
 
+
+    private void Awake()
+    {
+        activeTab = tabs[0];
     }
     // Update is called once per frame
     void Update()

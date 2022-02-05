@@ -26,6 +26,18 @@ public class InvTab : MonoBehaviour
         ungroupedItems.Remove(item);
     }
 
+    public void HideTab()
+    {
+        foreach (Transform child in transform)
+            child.gameObject.SetActive(false);
+    }
+
+    public void DrawTab()
+    {
+        foreach (Transform child in transform)
+            child.gameObject.SetActive(true);
+    }
+
     public void ClearTab()
     {
         ungroupedItems = null;
