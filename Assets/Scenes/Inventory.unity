@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 525172096834494380, guid: ca117a4c8708ffd42828547076324022, type: 3}
       propertyPath: m_Name
-      value: Tab (2)
+      value: ConsumablesTab
       objectReference: {fileID: 0}
     - target: {fileID: 6853303816088524585, guid: ca117a4c8708ffd42828547076324022, type: 3}
       propertyPath: tabType
@@ -590,11 +590,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponItems:
-  - {fileID: 752594157758223162, guid: 1676c91a4e109e2438ff4144188c29d1, type: 3}
+  - {fileID: 4101141464570474971, guid: 11ccd7aacfcbdcd49bcdf373397db78c, type: 3}
   clothingItems:
-  - {fileID: 4821576948754541844, guid: 32b98dda833531b4fbb6978bdf746f4f, type: 3}
+  - {fileID: 7162083715412152909, guid: 32b98dda833531b4fbb6978bdf746f4f, type: 3}
   consumableItems:
-  - {fileID: -5000028891890068954, guid: bf1b0911a578c89408d08fbdc85385c5, type: 3}
+  - {fileID: 7511210093991849331, guid: 2497adfb5dbc3354b902e93c52b5026a, type: 3}
 --- !u!4 &1894832682
 Transform:
   m_ObjectHideFlags: 0
@@ -618,7 +618,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 525172096834494380, guid: ca117a4c8708ffd42828547076324022, type: 3}
       propertyPath: m_Name
-      value: Tab (1)
+      value: ClothingTab
       objectReference: {fileID: 0}
     - target: {fileID: 6853303816088524585, guid: ca117a4c8708ffd42828547076324022, type: 3}
       propertyPath: tabType
@@ -820,7 +820,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 525172096834494380, guid: ca117a4c8708ffd42828547076324022, type: 3}
       propertyPath: m_Name
-      value: Tab
+      value: WeaponTab
       objectReference: {fileID: 0}
     - target: {fileID: 6853303816088524585, guid: ca117a4c8708ffd42828547076324022, type: 3}
       propertyPath: displayName

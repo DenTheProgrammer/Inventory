@@ -5,10 +5,5 @@ using UnityEngine;
 public class InvConsumableItem : InvItem
 {
     [Range(1, 100000)]
-    public int seed;
-
-    private void Awake()
-    {
-        itemType = ItemType.Consumables;
-    }
+    public int seed = 777;
 }

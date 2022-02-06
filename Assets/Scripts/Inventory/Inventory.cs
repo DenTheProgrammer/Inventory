@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
     private List<InvTab> tabs;
     public Transform topLeft;
     public static Inventory Instance;
-    public InvTab activeTab { private set; get; }
+    public InvTab ActiveTab { private set; get; }
 
     public void AddItemToTheInventory(InvItem item)
     {
@@ -34,21 +34,21 @@ public class Inventory : MonoBehaviour
 
     public void ChangeActiveTab(InvTab tab)
     {
-        activeTab.HideTab();
-        activeTab = tab;
-        activeTab.DrawTab();
+        ActiveTab.HideTab();
+        ActiveTab = tab;
+        ActiveTab.DrawTab();
     }
 
     private void DrawInventory()
     {
-        activeTab.DrawTab();
+        ActiveTab.DrawTab();
     }
 
 
     private void Awake()
     {
         Instance = this;
-        activeTab = tabs[0];
+        ActiveTab = tabs[0];
     }
     // Update is called once per frame
     void Update()

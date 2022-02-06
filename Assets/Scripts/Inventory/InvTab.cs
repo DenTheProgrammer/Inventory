@@ -8,9 +8,10 @@ public class InvTab : MonoBehaviour
     public string displayName;
     public ItemType tabType; //same type as Items in it
     [SerializeField]
-    private List<InvItem> ungroupedItems;
-    [SerializeField]
     private List<InvGroup> groups;
+    [SerializeField]
+    private GameObject groupPrefab;
+    private InvGroupDefault defaultGroup;
 
     private void Awake()
     {
@@ -20,9 +21,15 @@ public class InvTab : MonoBehaviour
 
     public void AddItemToTheTab(InvItem item)
     {
-        if (ungroupedItems == null)
-            ungroupedItems = new List<InvItem>();
-        ungroupedItems.Add(item);
+        if (defaultGroup == null)
+        {
+            GameObject groupDefault = Instantiate(groupPrefab, Inventory.Instance.topLeft);
+            groupDefault.name = "default group";
+            groupDefault.transform.SetParent(gameObject.transform);
+            groupDefault.AddComponent<InvGroupDefault>();
+            defaultGroup = groupDefault.GetComponent<InvGroupDefault>();
+        }
+        defaultGroup.AddItemToGroup(item); 
     }
 
     public void RemoveItemFromTheTab(InvItem item)
@@ -31,7 +38,7 @@ public class InvTab : MonoBehaviour
         {
             group.RemoveItemFromTheGroup(item);
         }
-        ungroupedItems.Remove(item);
+        defaultGroup.RemoveItemFromTheGroup(item);
     }
 
     public void HideTab()
@@ -42,14 +49,19 @@ public class InvTab : MonoBehaviour
 
     public void DrawTab()
     {
-        foreach (Transform child in transform)
-            child.gameObject.SetActive(true);
+        /*foreach (Transform child in transform)
+            child.gameObject.SetActive(true);*/
+        foreach (InvGroup group in groups)
+        {
+            group.DrawGroup();
+        }
     }
 
     public void ClearTab()
     {
-        ungroupedItems = null;
-        groups = null;
+        //TODO
+        /*defaultGroup.???
+        groups = null;*/
     }
 
 
@@ -59,14 +71,8 @@ public class InvTab : MonoBehaviour
         foreach (InvGroup group in groups)
         {
             group.LogGroup();
-            
         }
-        if (ungroupedItems.Count == 0) return;
-        Debug.Log("Ungrouped items:");
-        foreach (InvItem item in ungroupedItems)
-        {
-            Debug.Log(item.name);
-        }
+        defaultGroup.LogGroup();
     }
 }
 

@@ -2,29 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InvGroup : MonoBehaviour
+public abstract class InvGroup : MonoBehaviour
 {
     [SerializeField]
-    private List<InvItem> items;
-    [SerializeField]
-    private string groupTitle;
+    public List<InvItem> items;
 
     public void AddItemToGroup(InvItem item)
     {
         if (items == null)
             items = new List<InvItem>();
         items.Add(item);
+        GameObject newItem = Instantiate(item.gameObject, Inventory.Instance.topLeft);
+        newItem.gameObject.transform.SetParent(gameObject.transform);
     }
 
     public void RemoveItemFromTheGroup(InvItem item)
     {
         if (items != null)
+        {
             items.Remove(item);
+            Destroy(item.gameObject);
+        }
     }
 
-    public void LogGroup()
+    public virtual void DrawGroup()
     {
-        Debug.Log($"Group \"{groupTitle}\":");
+        //TODO
+    }
+
+    public virtual void LogGroup()
+    {
         foreach(InvItem item in items)
         {
             Debug.Log(item.name);

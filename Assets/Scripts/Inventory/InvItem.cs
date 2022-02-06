@@ -6,10 +6,12 @@ public abstract class InvItem : MonoBehaviour
 {
     public ItemType itemType;
     [Range(1,5)]
-    public int type;
+    public int type = 1;
     public string title;
     [Range(1,7)]
-    public int level;
+    public int level = 1;
+
+    
 
     private void Start()
     {

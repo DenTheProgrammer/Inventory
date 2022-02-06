@@ -6,10 +6,5 @@ public class InvWeaponItem : InvItem
 {
     public bool equipped;
     [Range(1, 100)]
-    public int damage;
-
-    private void Awake()
-    {
-        itemType = ItemType.Weapons;
-    }
+    public int damage = 25;
 }
