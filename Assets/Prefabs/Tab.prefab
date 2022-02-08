@@ -35,8 +35,8 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -124, y: 256}
   m_SizeDelta: {x: 184.5, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: 
   tabType: 0
+  nextEmptySlot: {x: 0, y: 0, z: 0}
   groups: []
   groupPrefab: {fileID: 6028787341587683490, guid: 5e814ad1c89df8d4282a0dc94cc33515, type: 3}
 --- !u!1 &1523864573495781864

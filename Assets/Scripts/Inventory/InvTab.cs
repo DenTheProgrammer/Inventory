@@ -7,6 +7,7 @@ public class InvTab : MonoBehaviour
 {
     public string displayName;
     public ItemType tabType; //same type as Items in it
+    public Vector3 nextEmptySlot;
     [SerializeField]
     private List<InvGroup> groups;
     [SerializeField]
@@ -49,12 +50,16 @@ public class InvTab : MonoBehaviour
 
     public void DrawTab()
     {
+        nextEmptySlot = new Vector2(Inventory.Instance.topLeft.position.x, Inventory.Instance.topLeft.position.y);
+        //Debug.Log(nextEmptySlot);
         /*foreach (Transform child in transform)
             child.gameObject.SetActive(true);*/
         foreach (InvGroup group in groups)
         {
-            group.DrawGroup();
+            nextEmptySlot = group.DrawGroup(nextEmptySlot);
         }
+        nextEmptySlot = defaultGroup.DrawGroup(nextEmptySlot);
+        //Debug.Log(nextEmptySlot);
     }
 
     public void ClearTab()

@@ -5,11 +5,14 @@ using System;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField]
-    private List<InvTab> tabs;
     public Transform topLeft;
     public static Inventory Instance;
-    public InvTab ActiveTab { private set; get; }
+    public InvTab activeTab;
+    public Vector2 slotSize;
+    public Vector2 spacingSize;
+    public int cellsInRow;
+    [SerializeField]
+    private List<InvTab> tabs;
 
     public void AddItemToTheInventory(InvItem item)
     {
@@ -34,21 +37,21 @@ public class Inventory : MonoBehaviour
 
     public void ChangeActiveTab(InvTab tab)
     {
-        ActiveTab.HideTab();
-        ActiveTab = tab;
-        ActiveTab.DrawTab();
+        activeTab.HideTab();
+        activeTab = tab;
+        activeTab.DrawTab();
     }
 
     private void DrawInventory()
     {
-        ActiveTab.DrawTab();
+        activeTab.DrawTab();
     }
 
 
     private void Awake()
     {
         Instance = this;
-        ActiveTab = tabs[0];
+        activeTab = tabs[0];
     }
     // Update is called once per frame
     void Update()
