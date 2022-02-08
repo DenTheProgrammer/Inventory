@@ -14,6 +14,7 @@ public abstract class InvGroup : MonoBehaviour
         GameObject newItem = Instantiate(item.gameObject, transform);
         items.Add(newItem.GetComponent<InvItem>());
         newItem.transform.SetParent(gameObject.transform);
+        Inventory.Instance.DrawInventory();
     }
 
     public void RemoveItemFromTheGroup(InvItem item)
@@ -23,6 +24,7 @@ public abstract class InvGroup : MonoBehaviour
             items.Remove(item);
             Destroy(item.gameObject);
         }
+        Inventory.Instance.DrawInventory();
     }
 
     public virtual Vector2 DrawGroup(Vector2 nextGroupSlot)

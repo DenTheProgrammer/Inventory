@@ -40,11 +40,13 @@ public class Inventory : MonoBehaviour
         activeTab.HideTab();
         activeTab = tab;
         activeTab.DrawTab();
+        DrawInventory();
     }
 
-    private void DrawInventory()
+    public void DrawInventory()
     {
         activeTab.DrawTab();
+        Debug.LogWarning("Inventory Draw");
     }
 
 
@@ -56,7 +58,7 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DrawInventory();//!!!every frame!!!
+        
     }
 
     public void LogInventory()

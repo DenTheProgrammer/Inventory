@@ -840,10 +840,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponTab
       objectReference: {fileID: 0}
-    - target: {fileID: 6853303816088524585, guid: ca117a4c8708ffd42828547076324022, type: 3}
-      propertyPath: displayName
-      value: WEAPONS
-      objectReference: {fileID: 0}
     - target: {fileID: 7159762981681016616, guid: ca117a4c8708ffd42828547076324022, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

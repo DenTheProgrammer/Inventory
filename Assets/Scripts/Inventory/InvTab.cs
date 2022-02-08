@@ -68,7 +68,11 @@ public class InvTab : MonoBehaviour
     public void HideTab()
     {
         foreach (Transform child in transform)
+        {
+            if (child.GetComponent<TextMeshProUGUI>())
+                continue;  //ignore tabs title text
             child.gameObject.SetActive(false);
+        }
     }
 
     public void DrawTab()
@@ -77,11 +81,17 @@ public class InvTab : MonoBehaviour
         //Debug.Log(nextEmptySlot);
         /*foreach (Transform child in transform)
             child.gameObject.SetActive(true);*/
-        foreach (KeyValuePair<string, InvGroupNamed> keyValue in groups)
+        if (groups != null)
         {
-            nextEmptySlot = keyValue.Value.DrawGroup(nextEmptySlot);
+            foreach (KeyValuePair<string, InvGroupNamed> keyValue in groups)
+            {
+                nextEmptySlot = keyValue.Value.DrawGroup(nextEmptySlot);
+            }
         }
         nextEmptySlot = defaultGroup.DrawGroup(nextEmptySlot);
+
+        foreach (Transform child in transform)
+            child.gameObject.SetActive(true);
         //Debug.Log(nextEmptySlot);
     }
 
@@ -92,7 +102,10 @@ public class InvTab : MonoBehaviour
         groups = null;*/
     }
 
-
+    public void OnTabButtonPress()
+    {
+        Inventory.Instance.ChangeActiveTab(this);
+    }
     public void LogTab()
     {
         Debug.Log($"Tab \"{displayName}\":");
