@@ -25,7 +25,7 @@ public abstract class InvGroup : MonoBehaviour
         }
     }
 
-    public virtual Vector2 DrawGroup(Vector3 nextGroupSlot)
+    public virtual Vector2 DrawGroup(Vector2 nextGroupSlot)
     {
         Vector2 spacing = Inventory.Instance.spacingSize;
         int rows = Mathf.CeilToInt((float)items.Count / Inventory.Instance.cellsInRow);
@@ -34,7 +34,7 @@ public abstract class InvGroup : MonoBehaviour
         //Draw Group
         RectTransform groupRectTransform = gameObject.GetComponent<RectTransform>();
         groupRectTransform.sizeDelta = new Vector2(groupWidth, groupHeight);
-        groupRectTransform.position = nextGroupSlot + new Vector3(groupWidth/2 + spacing.x,-groupHeight/2 -spacing.y);
+        groupRectTransform.position = nextGroupSlot + new Vector2(groupWidth/2 + spacing.x,-groupHeight/2 -spacing.y);
         //
         //Draw Group Items
         int itemsInRow = Inventory.Instance.cellsInRow;

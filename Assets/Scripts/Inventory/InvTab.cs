@@ -8,8 +8,7 @@ public class InvTab : MonoBehaviour
     public string displayName;
     public ItemType tabType; //same type as Items in it
     public Vector3 nextEmptySlot;
-    [SerializeField]
-    private List<InvGroup> groups;
+    public Dictionary<string, InvGroupNamed> groups;
     [SerializeField]
     private GameObject groupPrefab;
     private InvGroupDefault defaultGroup;
@@ -33,11 +32,35 @@ public class InvTab : MonoBehaviour
         defaultGroup.AddItemToGroup(item); 
     }
 
+    public void AddItemToTheTab(InvItem item, string groupName)
+    {
+        if (groups == null)
+        {
+            groups = new Dictionary<string, InvGroupNamed>();
+        }
+        if (!groups.ContainsKey(groupName))//group with new name
+        {
+            CreateNamedGroup(groupName);
+        }
+        groups[groupName].AddItemToGroup(item);
+    }
+
+    private void CreateNamedGroup(string groupTitle)
+    {
+        GameObject newGroupGO = Instantiate(groupPrefab, Inventory.Instance.topLeft);
+        newGroupGO.name = groupTitle;
+        newGroupGO.transform.SetParent(gameObject.transform);
+        newGroupGO.AddComponent<InvGroupNamed>();
+        InvGroupNamed newGroup = newGroupGO.GetComponent<InvGroupNamed>();
+        newGroup.groupTitle = groupTitle;
+        groups.Add(groupTitle, newGroup);
+    }
+
     public void RemoveItemFromTheTab(InvItem item)
     {
-        foreach (InvGroup group in groups)
+        foreach (KeyValuePair<string, InvGroupNamed> keyValue in groups)
         {
-            group.RemoveItemFromTheGroup(item);
+            keyValue.Value.RemoveItemFromTheGroup(item);
         }
         defaultGroup.RemoveItemFromTheGroup(item);
     }
@@ -54,9 +77,9 @@ public class InvTab : MonoBehaviour
         //Debug.Log(nextEmptySlot);
         /*foreach (Transform child in transform)
             child.gameObject.SetActive(true);*/
-        foreach (InvGroup group in groups)
+        foreach (KeyValuePair<string, InvGroupNamed> keyValue in groups)
         {
-            nextEmptySlot = group.DrawGroup(nextEmptySlot);
+            nextEmptySlot = keyValue.Value.DrawGroup(nextEmptySlot);
         }
         nextEmptySlot = defaultGroup.DrawGroup(nextEmptySlot);
         //Debug.Log(nextEmptySlot);
@@ -73,9 +96,10 @@ public class InvTab : MonoBehaviour
     public void LogTab()
     {
         Debug.Log($"Tab \"{displayName}\":");
-        foreach (InvGroup group in groups)
+        if (groups == null) return;
+        foreach (KeyValuePair<string, InvGroupNamed> entry in groups)
         {
-            group.LogGroup();
+            entry.Value.LogGroup();
         }
         defaultGroup.LogGroup();
     }

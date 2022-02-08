@@ -339,6 +339,7 @@ GameObject:
   - component: {fileID: 312336424}
   - component: {fileID: 312336423}
   - component: {fileID: 312336422}
+  - component: {fileID: 312336425}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -411,6 +412,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &312336425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312336421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 504f70e9d007c9f4d94be51edc44bd1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeepSceneViewActive: 1
 --- !u!224 &511696598 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7159762981681016616, guid: ca117a4c8708ffd42828547076324022, type: 3}
@@ -475,7 +489,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -281, y: 331.7}
+  m_AnchoredPosition: {x: -281, y: 315}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1221060609
@@ -807,10 +821,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topLeft: {fileID: 781797663}
-  activeTab: {fileID: 0}
-  slotSize: {x: 50, y: 50}
+  activeTab: {fileID: 1576430943}
+  slotSize: {x: 79.2, y: 55.8}
   spacingSize: {x: 10, y: 10}
-  cellsInRow: 5
+  cellsInRow: 6
   tabs:
   - {fileID: 1576430943}
   - {fileID: 665667284}

@@ -18,6 +18,10 @@ public class TestManager : MonoBehaviour
             AddRandomItemToInventoryFromList(clothingItems);
             AddRandomItemToInventoryFromList(consumableItems);
         }
+
+        Inventory.Instance.activeTab.AddItemToTheTab(consumableItems[0], "Test");
+        Inventory.Instance.activeTab.AddItemToTheTab(clothingItems[0], "Test");
+        Inventory.Instance.activeTab.AddItemToTheTab(clothingItems[0], "Test2");
         Inventory.Instance.LogInventory();
     }
 
