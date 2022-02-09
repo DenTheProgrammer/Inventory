@@ -11,7 +11,8 @@ public abstract class InvItem : MonoBehaviour
     [Range(1,7)]
     public int level = 1;
 
-    
+
+    public abstract string StatsToString();
 
     private void Start()
     {

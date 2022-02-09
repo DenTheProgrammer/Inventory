@@ -34,7 +34,7 @@ public class TestManager : MonoBehaviour
 
     private void AddRandomItemToInventoryFromList<T>(List<T> items) where T : InvItem
     {
-        InvItem randomItem = items[Random.Range(0, items.Count - 1)];
+        InvItem randomItem = items[Random.Range(0, items.Count)];
         Debug.Log($"adding {randomItem.title} to inventory...");
         Inventory.Instance.AddItemToTheInventory(randomItem);
     }
