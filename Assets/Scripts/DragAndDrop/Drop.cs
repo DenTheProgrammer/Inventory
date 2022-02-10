@@ -15,8 +15,7 @@ public class Drop : MonoBehaviour, IDropHandler
         {
             if (draggedItem.currentGroup != group)//if not the same group
             {
-                draggedItem.currentGroup.RemoveItemFromTheGroup(draggedItem);
-                group.AddItemToGroup(draggedItem);
+                draggedItem.MoveToAnotherGroup(group);
             }
         }
     }

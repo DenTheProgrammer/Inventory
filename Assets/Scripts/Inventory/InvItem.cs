@@ -15,6 +15,15 @@ public abstract class InvItem : MonoBehaviour
 
     public abstract string StatsToString();
 
+    public void MoveToAnotherGroup(InvGroup anotherGroup)
+    {
+        if (anotherGroup != currentGroup)
+        {
+            currentGroup.RemoveItemFromTheGroup(this);
+            anotherGroup.AddItemToGroup(this);
+        }
+    }
+
     public void DestroyItem()
     {
         Destroy(gameObject);

@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class InvTab : MonoBehaviour
 {
     public string displayName;
     public ItemType tabType; //same type as Items in it
     public Vector3 nextEmptySlot;
+    public InvGroupDefault defaultGroup;
     public Dictionary<string, InvGroupNamed> groups;
     [SerializeField]
     private GameObject groupPrefab;
-    private InvGroupDefault defaultGroup;
 
     private void Awake()
     {
@@ -25,17 +26,22 @@ public class InvTab : MonoBehaviour
             groupDefault.transform.SetParent(gameObject.transform);
             groupDefault.AddComponent<InvGroupDefault>();
             defaultGroup = groupDefault.GetComponent<InvGroupDefault>();
+            defaultGroup.itemsType = tabType;
         }
     }
 
     public void AddItemToTheTab(InvItem item)
     {
-        
-        defaultGroup.AddItemToGroup(item); 
+        item.currentTab = this;
+        defaultGroup.AddItemToGroup(item);
     }
 
     public void AddItemToTheTab(InvItem item, string groupName)
     {
+        if (groupName == null || groupName == "")
+        {
+            defaultGroup.AddItemToGroup(item);
+        }
         if (!groups.ContainsKey(groupName))//group with new name
         {
             CreateNamedGroup(groupName);
@@ -45,12 +51,15 @@ public class InvTab : MonoBehaviour
 
     public void CreateNamedGroup(string groupTitle)
     {
+        if (groups.ContainsKey(groupTitle) || groupTitle == null || groupTitle == "")
+            return;
         GameObject newGroupGO = Instantiate(groupPrefab, Inventory.Instance.topLeft);
         newGroupGO.name = groupTitle;
         newGroupGO.transform.SetParent(gameObject.transform);
         newGroupGO.AddComponent<InvGroupNamed>();
         InvGroupNamed newGroup = newGroupGO.GetComponent<InvGroupNamed>();
         newGroup.groupTitle = groupTitle;
+        newGroup.itemsType = tabType;
         groups.Add(groupTitle, newGroup);
     }
 
@@ -62,6 +71,7 @@ public class InvTab : MonoBehaviour
         }
         defaultGroup.RemoveItemFromTheGroup(item);
     }
+
 
     public void DestroyItemsInTab()
     {

@@ -11,10 +11,15 @@ public class Inventory : MonoBehaviour
     public Vector2 slotSize;
     public Vector2 spacingSize;
     public int cellsInRow;
-    [SerializeField]
-    private List<InvTab> tabs;
+    public List<InvTab> tabs;
 
-    public void AddItemToTheInventory(GameObject itemPrefab)
+    private void Awake()
+    {
+        Instance = this;
+        activeTab = tabs[0];
+    }
+
+    public InvItem AddItemToTheInventory(GameObject itemPrefab)
     {
         GameObject newItemGO = Instantiate(itemPrefab);
         InvItem newItem = newItemGO.GetComponent<InvItem>();
@@ -23,12 +28,12 @@ public class Inventory : MonoBehaviour
             if (tab.tabType == newItem.itemType)
             {
                 tab.AddItemToTheTab(newItem);
-                newItem.currentTab = tab;
-                return;
+                return newItem;
             }
         }
         throw new NotImplementedException($"Unknown Item type - {newItem.type}");
     }
+
 
     public void DestroyAllItems()
     {
@@ -50,20 +55,16 @@ public class Inventory : MonoBehaviour
     {
         Debug.LogWarning("Drawing Inventory");
         activeTab.DrawTab();
-        LogInventory();
+        //LogInventory();
     }
 
 
-    private void Awake()
-    {
-        Instance = this;
-        activeTab = tabs[0];
-    }
-    // Update is called once per frame
     void Update()
     {
         ///////////////DrawInventory();//////////////for tests only
     }
+
+
 
     public void LogInventory()
     {
@@ -75,4 +76,27 @@ public class Inventory : MonoBehaviour
     }
 }
 
+[Serializable]
+public class InventorySaveObject
+{
+    public List<ItemSaveObject> items;
+
+    public InventorySaveObject()
+    {
+        items = new List<ItemSaveObject>();
+    }
+}
+
+[Serializable]
+public class ItemSaveObject
+{
+    public string itemTitle;
+    public string groupName;
+
+    public ItemSaveObject(string itemTitle, string groupName = null)
+    {
+        this.itemTitle = itemTitle;
+        this.groupName = groupName;
+    }
+}
 

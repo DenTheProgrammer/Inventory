@@ -5,8 +5,6 @@ using TMPro;
 
 public class InvGroupNamed : InvGroup
 {
-    [SerializeField]
-    public string groupTitle;
 
     public override Vector2 DrawGroup(Vector2 nextGroupSlot)
     {

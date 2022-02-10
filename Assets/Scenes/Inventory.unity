@@ -420,7 +420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7159762981681016616, guid: ca117a4c8708ffd42828547076324022, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 198
+      value: 187
       objectReference: {fileID: 0}
     - target: {fileID: 7159762981681016616, guid: ca117a4c8708ffd42828547076324022, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1909,7 +1909,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 952121512}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2043893054}
+        m_TargetAssemblyTypeName: SaveLoadInventory, Assembly-CSharp
+        m_MethodName: LoadInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &952121512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2363,7 +2375,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1246600201}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2043893054}
+        m_TargetAssemblyTypeName: SaveLoadInventory, Assembly-CSharp
+        m_MethodName: SaveInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1246600201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2708,10 +2732,10 @@ RectTransform:
   m_Father: {fileID: 189901279}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 671, y: 349}
-  m_SizeDelta: {x: 354.17, y: 230.2}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -289, y: 349}
+  m_SizeDelta: {x: 354.17004, y: 230.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1528911360
 MonoBehaviour:
@@ -3296,7 +3320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7159762981681016616, guid: ca117a4c8708ffd42828547076324022, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -4
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7159762981681016616, guid: ca117a4c8708ffd42828547076324022, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3328,6 +3352,7 @@ GameObject:
   - component: {fileID: 2043893052}
   - component: {fileID: 2043893051}
   - component: {fileID: 2043893053}
+  - component: {fileID: 2043893054}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -3356,7 +3381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -291.00494, y: -169.91498}
+  m_AnchoredPosition: {x: -334, y: -179}
   m_SizeDelta: {x: 563.18994, y: 663.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2043893051
@@ -3418,6 +3443,19 @@ MonoBehaviour:
   - {fileID: 1576430943}
   - {fileID: 665667284}
   - {fileID: 511696599}
+--- !u!114 &2043893054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043893049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90d006cb5e55fe4480ec9acb101fdf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SAVEFILE_NAME: inventory.json
 --- !u!1 &2090996912
 GameObject:
   m_ObjectHideFlags: 0
@@ -3672,8 +3710,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294901995
-  m_fontColor: {r: 0.92129517, g: 0, b: 1, a: 1}
+    rgba: 4294155756
+  m_fontColor: {r: 0.92639214, g: 0.61574405, b: 0.9528302, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3951,7 +3989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7159762981681016616, guid: ca117a4c8708ffd42828547076324022, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -202
+      value: -188
       objectReference: {fileID: 0}
     - target: {fileID: 7159762981681016616, guid: ca117a4c8708ffd42828547076324022, type: 3}
       propertyPath: m_AnchoredPosition.y

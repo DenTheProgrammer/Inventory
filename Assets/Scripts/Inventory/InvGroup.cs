@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class InvGroup : MonoBehaviour
 {
     public List<InvItem> items;
+    public ItemType itemsType;
+    public string groupTitle;
 
     private void Awake()
     {
@@ -19,6 +21,7 @@ public abstract class InvGroup : MonoBehaviour
         item.currentGroup = this;
         Inventory.Instance.DrawInventory();
     }
+
 
     public void RemoveItemFromTheGroup(InvItem item)
     {

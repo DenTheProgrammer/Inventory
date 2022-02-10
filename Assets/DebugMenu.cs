@@ -35,4 +35,7 @@ public class DebugMenu : MonoBehaviour
         Debug.Log($"adding {randomPrefab.name} to {inventory}...");
         inventory.AddItemToTheInventory(randomPrefab);
     }
+
+
+    
 }
