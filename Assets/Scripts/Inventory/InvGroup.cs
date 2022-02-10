@@ -4,43 +4,44 @@ using UnityEngine;
 
 public abstract class InvGroup : MonoBehaviour
 {
-    [SerializeField]
     public List<InvItem> items;
 
+    private void Awake()
+    {
+        items = new List<InvItem>();
+    }
     public void AddItemToGroup(InvItem item)
     {
-        if (items == null)
-            items = new List<InvItem>();
-        GameObject newItem = Instantiate(item.gameObject, transform);
-        items.Add(newItem.GetComponent<InvItem>());
-        newItem.transform.SetParent(gameObject.transform);
+        //GameObject newItemGO = Instantiate(item.gameObject, transform);
+        items.Add(item);
+        item.transform.position = transform.position;
+        item.transform.SetParent(gameObject.transform);
+        item.currentGroup = this;
         Inventory.Instance.DrawInventory();
     }
 
     public void RemoveItemFromTheGroup(InvItem item)
     {
-        if (items != null)
-        {
-            items.Remove(item);
-            Destroy(item.gameObject);
-        }
+        items.Remove(item);
         Inventory.Instance.DrawInventory();
     }
 
     public virtual Vector2 DrawGroup(Vector2 nextGroupSlot)
     {
         Vector2 spacing = Inventory.Instance.spacingSize;
-        int rows = Mathf.CeilToInt((float)items.Count / Inventory.Instance.cellsInRow);
+        Vector2 itemSize = Inventory.Instance.slotSize;
+        int itemsInRow = Inventory.Instance.cellsInRow;
+        int rows = Mathf.CeilToInt((float)items.Count / itemsInRow);
         float groupWidth = Inventory.Instance.gameObject.GetComponent<RectTransform>().rect.width - (2* spacing.y);
-        float groupHeight = (Inventory.Instance.slotSize.y * rows) + (spacing.y * (rows + 1));
+        float groupHeight = (itemSize.y * rows) + (spacing.y * (rows + 1));
+        if (groupHeight < itemSize.y) groupHeight = itemSize.y;////empty group
         //Draw Group
         RectTransform groupRectTransform = gameObject.GetComponent<RectTransform>();
         groupRectTransform.sizeDelta = new Vector2(groupWidth, groupHeight);
         groupRectTransform.position = nextGroupSlot + new Vector2(groupWidth/2 + spacing.x,-groupHeight/2 -spacing.y);
         //
         //Draw Group Items
-        int itemsInRow = Inventory.Instance.cellsInRow;
-        Vector2 itemSize = Inventory.Instance.slotSize;
+
         
         for (int i = 0; i < items.Count; i++)
         {

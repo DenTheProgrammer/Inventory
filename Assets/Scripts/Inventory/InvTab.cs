@@ -16,6 +16,7 @@ public class InvTab : MonoBehaviour
     private void Awake()
     {
         gameObject.name = displayName;
+        groups = new Dictionary<string, InvGroupNamed>();
         GetComponentInChildren<TextMeshProUGUI>().text = displayName;
     }
 
@@ -34,10 +35,6 @@ public class InvTab : MonoBehaviour
 
     public void AddItemToTheTab(InvItem item, string groupName)
     {
-        if (groups == null)
-        {
-            groups = new Dictionary<string, InvGroupNamed>();
-        }
         if (!groups.ContainsKey(groupName))//group with new name
         {
             CreateNamedGroup(groupName);
@@ -45,7 +42,7 @@ public class InvTab : MonoBehaviour
         groups[groupName].AddItemToGroup(item);
     }
 
-    private void CreateNamedGroup(string groupTitle)
+    public void CreateNamedGroup(string groupTitle)
     {
         GameObject newGroupGO = Instantiate(groupPrefab, Inventory.Instance.topLeft);
         newGroupGO.name = groupTitle;
@@ -81,13 +78,12 @@ public class InvTab : MonoBehaviour
         //Debug.Log(nextEmptySlot);
         /*foreach (Transform child in transform)
             child.gameObject.SetActive(true);*/
-        if (groups != null)
+
+        foreach (KeyValuePair<string, InvGroupNamed> keyValue in groups)
         {
-            foreach (KeyValuePair<string, InvGroupNamed> keyValue in groups)
-            {
-                nextEmptySlot = keyValue.Value.DrawGroup(nextEmptySlot);
-            }
+            nextEmptySlot = keyValue.Value.DrawGroup(nextEmptySlot);
         }
+
         nextEmptySlot = defaultGroup.DrawGroup(nextEmptySlot);
 
         foreach (Transform child in transform)
@@ -114,7 +110,8 @@ public class InvTab : MonoBehaviour
         {
             entry.Value.LogGroup();
         }
-        defaultGroup.LogGroup();
+        if (defaultGroup)
+            defaultGroup.LogGroup();
     }
 }
 

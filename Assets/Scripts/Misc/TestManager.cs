@@ -5,23 +5,21 @@ using UnityEngine;
 public class TestManager : MonoBehaviour
 {
     
-    public List<InvWeaponItem> weaponItems;
-    public List<InvClothingItem> clothingItems;
-    public List<InvConsumableItem> consumableItems;
+    public List<GameObject> weaponPrefabs;
+    public List<GameObject> clothingPrefabs;
+    public List<GameObject> consumablePrefabs;
 
     // Start is called before the first frame update
     void Start()
     {
         for (int i = 0; i < 10; i++)
         {
-            AddRandomItemToInventoryFromList(weaponItems);
-            AddRandomItemToInventoryFromList(clothingItems);
-            AddRandomItemToInventoryFromList(consumableItems);
+            AddRandomItemToInventoryFromList(weaponPrefabs);
+            AddRandomItemToInventoryFromList(clothingPrefabs);
+            AddRandomItemToInventoryFromList(consumablePrefabs);
         }
 
-        Inventory.Instance.activeTab.AddItemToTheTab(consumableItems[0], "Test");
-        Inventory.Instance.activeTab.AddItemToTheTab(clothingItems[0], "Test");
-        Inventory.Instance.activeTab.AddItemToTheTab(clothingItems[0], "Test2");
+        
         Inventory.Instance.LogInventory();
     }
 
@@ -32,10 +30,10 @@ public class TestManager : MonoBehaviour
     }
 
 
-    private void AddRandomItemToInventoryFromList<T>(List<T> items) where T : InvItem
+    private void AddRandomItemToInventoryFromList(List<GameObject> itemsPrefabList)
     {
-        InvItem randomItem = items[Random.Range(0, items.Count)];
-        Debug.Log($"adding {randomItem.title} to inventory...");
-        Inventory.Instance.AddItemToTheInventory(randomItem);
+        GameObject randomPrefab = itemsPrefabList[Random.Range(0, itemsPrefabList.Count)];
+        Debug.Log($"adding {randomPrefab.name} to inventory...");
+        Inventory.Instance.AddItemToTheInventory(randomPrefab);
     }
 }

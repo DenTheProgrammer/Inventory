@@ -14,17 +14,20 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private List<InvTab> tabs;
 
-    public void AddItemToTheInventory(InvItem item)
+    public void AddItemToTheInventory(GameObject itemPrefab)
     {
+        GameObject newItemGO = Instantiate(itemPrefab);
+        InvItem newItem = newItemGO.GetComponent<InvItem>();
         foreach (InvTab tab in tabs)
         {
-            if (tab.tabType == item.itemType)
+            if (tab.tabType == newItem.itemType)
             {
-                tab.AddItemToTheTab(item);
+                tab.AddItemToTheTab(newItem);
+                newItem.currentTab = tab;
                 return;
             }
         }
-        throw new NotImplementedException($"Unknown Item type - {item.type}");
+        throw new NotImplementedException($"Unknown Item type - {newItem.type}");
     }
 
     public void ClearInventory()
@@ -45,8 +48,9 @@ public class Inventory : MonoBehaviour
 
     public void DrawInventory()
     {
+        Debug.LogWarning("Drawing Inventory");
         activeTab.DrawTab();
-        Debug.LogWarning("Inventory Draw");
+        LogInventory();
     }
 
 
@@ -58,7 +62,7 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ///////////////DrawInventory();//////////////for tests only
     }
 
     public void LogInventory()

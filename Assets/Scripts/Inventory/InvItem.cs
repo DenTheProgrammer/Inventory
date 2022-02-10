@@ -10,14 +10,22 @@ public abstract class InvItem : MonoBehaviour
     public string title;
     [Range(1,7)]
     public int level = 1;
-
+    public InvGroup currentGroup;
+    public InvTab currentTab;
 
     public abstract string StatsToString();
+
+    public void DestroyItem()
+    {
+        currentGroup.RemoveItemFromTheGroup(this);
+        Destroy(gameObject);
+    }
 
     private void Start()
     {
         gameObject.name = title;
     }
+
 }
 
 
