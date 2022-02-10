@@ -18,18 +18,19 @@ public class InvTab : MonoBehaviour
         gameObject.name = displayName;
         groups = new Dictionary<string, InvGroupNamed>();
         GetComponentInChildren<TextMeshProUGUI>().text = displayName;
-    }
-
-    public void AddItemToTheTab(InvItem item)
-    {
         if (defaultGroup == null)
         {
-            GameObject groupDefault = Instantiate(groupPrefab, Inventory.Instance.topLeft);
+            GameObject groupDefault = Instantiate(groupPrefab);
             groupDefault.name = "default group";
             groupDefault.transform.SetParent(gameObject.transform);
             groupDefault.AddComponent<InvGroupDefault>();
             defaultGroup = groupDefault.GetComponent<InvGroupDefault>();
         }
+    }
+
+    public void AddItemToTheTab(InvItem item)
+    {
+        
         defaultGroup.AddItemToGroup(item); 
     }
 
@@ -62,6 +63,17 @@ public class InvTab : MonoBehaviour
         defaultGroup.RemoveItemFromTheGroup(item);
     }
 
+    public void DestroyItemsInTab()
+    {
+        foreach (KeyValuePair<string, InvGroupNamed> groupEntry in groups)
+        {
+            groupEntry.Value.DestroyItemsInGroup();
+            Destroy(groupEntry.Value.gameObject);
+        }
+        groups = new Dictionary<string, InvGroupNamed>();
+        defaultGroup.DestroyItemsInGroup();
+    }
+
     public void HideTab()
     {
         foreach (Transform child in transform)
@@ -89,13 +101,6 @@ public class InvTab : MonoBehaviour
         foreach (Transform child in transform)
             child.gameObject.SetActive(true);
         //Debug.Log(nextEmptySlot);
-    }
-
-    public void ClearTab()
-    {
-        //TODO
-        /*defaultGroup.???
-        groups = null;*/
     }
 
     public void OnTabButtonPress()

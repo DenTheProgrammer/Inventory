@@ -30,14 +30,14 @@ public class Inventory : MonoBehaviour
         throw new NotImplementedException($"Unknown Item type - {newItem.type}");
     }
 
-    public void ClearInventory()
+    public void DestroyAllItems()
     {
         foreach (InvTab tab in tabs)
         {
-            tab.ClearTab();
+            tab.DestroyItemsInTab();
         }
+        DrawInventory();
     }
-
     public void ChangeActiveTab(InvTab tab)
     {
         activeTab.HideTab();

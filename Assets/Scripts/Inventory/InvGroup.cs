@@ -26,6 +26,16 @@ public abstract class InvGroup : MonoBehaviour
         Inventory.Instance.DrawInventory();
     }
 
+
+    public void DestroyItemsInGroup()
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            items[i].DestroyItem();
+        }
+        items = new List<InvItem>();
+    }
+
     public virtual Vector2 DrawGroup(Vector2 nextGroupSlot)
     {
         Vector2 spacing = Inventory.Instance.spacingSize;

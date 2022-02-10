@@ -17,7 +17,6 @@ public abstract class InvItem : MonoBehaviour
 
     public void DestroyItem()
     {
-        currentGroup.RemoveItemFromTheGroup(this);
         Destroy(gameObject);
     }
 
