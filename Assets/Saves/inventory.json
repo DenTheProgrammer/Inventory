@@ -2,66 +2,42 @@
     "items": [
         {
             "itemTitle": "Katana",
-            "groupName": "g"
+            "groupName": "Melee"
         },
         {
             "itemTitle": "Katana",
-            "groupName": "g"
+            "groupName": "Melee"
+        },
+        {
+            "itemTitle": "Katana",
+            "groupName": "Melee"
+        },
+        {
+            "itemTitle": "Katana",
+            "groupName": "Melee"
         },
         {
             "itemTitle": "Bow",
-            "groupName": "g"
+            "groupName": "2"
         },
         {
             "itemTitle": "Bow",
-            "groupName": "g"
+            "groupName": "2"
         },
         {
-            "itemTitle": "Bow",
-            "groupName": "g"
-        },
-        {
-            "itemTitle": "Bow",
-            "groupName": "g"
-        },
-        {
-            "itemTitle": "Bow",
-            "groupName": "0"
-        },
-        {
-            "itemTitle": "Bow",
+            "itemTitle": "Katana",
             "groupName": ""
         },
         {
-            "itemTitle": "Bow",
+            "itemTitle": "Katana",
             "groupName": ""
         },
         {
-            "itemTitle": "Bow",
+            "itemTitle": "Katana",
             "groupName": ""
         },
         {
-            "itemTitle": "Helmet",
-            "groupName": ""
-        },
-        {
-            "itemTitle": "Manticore Boots",
-            "groupName": ""
-        },
-        {
-            "itemTitle": "Manticore Boots",
-            "groupName": ""
-        },
-        {
-            "itemTitle": "Helmet",
-            "groupName": ""
-        },
-        {
-            "itemTitle": "Helmet",
-            "groupName": ""
-        },
-        {
-            "itemTitle": "Helmet",
+            "itemTitle": "Katana",
             "groupName": ""
         },
         {
@@ -81,7 +57,27 @@
             "groupName": ""
         },
         {
-            "itemTitle": "Beer",
+            "itemTitle": "Helmet",
+            "groupName": ""
+        },
+        {
+            "itemTitle": "Manticore Boots",
+            "groupName": ""
+        },
+        {
+            "itemTitle": "Manticore Boots",
+            "groupName": ""
+        },
+        {
+            "itemTitle": "Manticore Boots",
+            "groupName": ""
+        },
+        {
+            "itemTitle": "Helmet",
+            "groupName": ""
+        },
+        {
+            "itemTitle": "Helmet",
             "groupName": ""
         },
         {
@@ -97,11 +93,15 @@
             "groupName": ""
         },
         {
-            "itemTitle": "Beer",
+            "itemTitle": "Small Potion",
             "groupName": ""
         },
         {
-            "itemTitle": "Beer",
+            "itemTitle": "Small Potion",
+            "groupName": ""
+        },
+        {
+            "itemTitle": "Small Potion",
             "groupName": ""
         },
         {
