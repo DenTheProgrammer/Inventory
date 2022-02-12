@@ -5,8 +5,13 @@ using System.Text;
 
 public class InvConsumableItem : InvItem
 {
-    [Range(1, 100000)]
-    public int seed = 777;
+    public Vector2Int seedRange;
+    public int seed;
+    protected override void GenerateStats()
+    {
+        base.GenerateStats();
+        seed = Random.Range(seedRange.x, seedRange.y + 1);
+    }
 
     public override string StatsToString()
     {

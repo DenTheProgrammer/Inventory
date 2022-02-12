@@ -6,9 +6,15 @@ using System.Text;
 public class InvWeaponItem : InvItem
 {
     public bool equipped;
-    [Range(1, 100)]
-    public int damage = 25;
+    public Vector2Int damageRange;
+    public int damage;
 
+    protected override void GenerateStats()
+    {
+        base.GenerateStats();
+        damage = Random.Range(damageRange.x, damageRange.y + 1);
+        equipped = Random.value < 0.5;//       50/50 starting equip chance - stupid but ok
+    }
     public override string StatsToString()
     {
         StringBuilder stringBuilder = new StringBuilder();

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using System.IO;
 
 public class SaveLoadInventory : MonoBehaviour
@@ -21,7 +22,7 @@ public class SaveLoadInventory : MonoBehaviour
     }
 
 
-    public void SaveInventory()
+/*    public void SaveInventory()
     {
         InventorySaveObject inventorySaveObject = new InventorySaveObject();
         foreach (InvTab tab in inventory.tabs)
@@ -60,11 +61,81 @@ public class SaveLoadInventory : MonoBehaviour
                 addedItem.MoveToAnotherGroup(addedItem.currentTab.groups[itemSaveObject.groupName]);
             }
         }
+    }*/
+
+    public void SaveInventory()
+    {
+        InventorySaveObject inventorySaveObject = new InventorySaveObject();
+        foreach (InvTab tab in inventory.tabs)
+        {
+            TabSaveObject tabSaveObject = new TabSaveObject(tab.tabType);
+            foreach (KeyValuePair<string, InvGroupNamed> groupEntry in tab.groups)
+            {
+                GroupSaveObject groupSaveObject = new GroupSaveObject(groupEntry.Key);
+                foreach (InvItem item in groupEntry.Value.items)
+                {
+                    ItemSaveObject itemSaveObject = new ItemSaveObject(item.title);
+                    groupSaveObject.itemList.Add(itemSaveObject);
+                }
+                tabSaveObject.groupList.Add(groupSaveObject);
+            }
+            GroupSaveObject defaultGroupSaveObject = new GroupSaveObject(null);
+            foreach (InvItem item in tab.defaultGroup.items)
+            {
+                ItemSaveObject itemSaveObject = new ItemSaveObject(item.title);
+                defaultGroupSaveObject.itemList.Add(itemSaveObject);
+            }
+            tabSaveObject.groupList.Add(defaultGroupSaveObject);
+            inventorySaveObject.tabs.Add(tabSaveObject);
+        }
+        string savedInventory = JsonUtility.ToJson(inventorySaveObject, true);
+        File.WriteAllText(SAVE_PATH + SAVEFILE_NAME, savedInventory);
+        Debug.Log(savedInventory);
     }
+}
 
+[Serializable]
+public class InventorySaveObject
+{
+    public List<TabSaveObject> tabs;
 
+    public InventorySaveObject()
+    {
+        this.tabs = new List<TabSaveObject>();
+    }
+}
 
+[Serializable]
+public class TabSaveObject
+{
+    public ItemType tabType;
+    public List<GroupSaveObject> groupList;
 
+    public TabSaveObject(ItemType tabType)
+    {
+        this.groupList = new List<GroupSaveObject>();
+        this.tabType = tabType;
+    }
+}
 
+[Serializable]
+public class GroupSaveObject
+{
+    public string groupTitle;
+    public List<ItemSaveObject> itemList;
+    public GroupSaveObject(string groupTitle)
+    {
+        this.itemList = new List<ItemSaveObject>();
+        this.groupTitle = groupTitle;
+    }
+}
 
+[Serializable]
+public class ItemSaveObject
+{
+    public string itemTitle;
+    public ItemSaveObject(string itemTitle)
+    {
+        this.itemTitle = itemTitle;
+    }
 }

@@ -4,7 +4,6 @@
             "tabType": 0,
             "groupList": [
                 {
-                    "groupTitle": "",
                     "itemList": [
                         {
                             "itemType": 0,
@@ -12,10 +11,6 @@
                         },
                         {
                             "itemType": 0,
-                            "itemTitle": "Bow"
-                        },
-                        {
-                            "itemType": 0,
                             "itemTitle": "Katana"
                         },
                         {
@@ -28,7 +23,7 @@
                         },
                         {
                             "itemType": 0,
-                            "itemTitle": "Bow"
+                            "itemTitle": "Katana"
                         },
                         {
                             "itemType": 0,
@@ -37,6 +32,10 @@
                         {
                             "itemType": 0,
                             "itemTitle": "Katana"
+                        },
+                        {
+                            "itemType": 0,
+                            "itemTitle": "Bow"
                         },
                         {
                             "itemType": 0,
@@ -46,7 +45,8 @@
                             "itemType": 0,
                             "itemTitle": "Bow"
                         }
-                    ]
+                    ],
+                    "groupTitle": ""
                 }
             ]
         },
@@ -54,10 +54,25 @@
             "tabType": 1,
             "groupList": [
                 {
-                    "groupTitle": "Trash",
                     "itemList": [
                         {
                             "itemType": 1,
+                            "itemTitle": "Manticore Boots"
+                        },
+                        {
+                            "itemType": 1,
+                            "itemTitle": "Helmet"
+                        },
+                        {
+                            "itemType": 1,
+                            "itemTitle": "Manticore Boots"
+                        },
+                        {
+                            "itemType": 1,
+                            "itemTitle": "Helmet"
+                        },
+                        {
+                            "itemType": 1,
                             "itemTitle": "Helmet"
                         },
                         {
@@ -67,41 +82,21 @@
                         {
                             "itemType": 1,
                             "itemTitle": "Manticore Boots"
+                        },
+                        {
+                            "itemType": 1,
+                            "itemTitle": "Manticore Boots"
+                        },
+                        {
+                            "itemType": 1,
+                            "itemTitle": "Helmet"
+                        },
+                        {
+                            "itemType": 1,
+                            "itemTitle": "Helmet"
                         }
-                    ]
-                },
-                {
-                    "groupTitle": "",
-                    "itemList": [
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Helmet"
-                        },
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Helmet"
-                        },
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Helmet"
-                        },
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Helmet"
-                        },
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Manticore Boots"
-                        },
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Manticore Boots"
-                        },
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Manticore Boots"
-                        }
-                    ]
+                    ],
+                    "groupTitle": ""
                 }
             ]
         },
@@ -109,18 +104,9 @@
             "tabType": 2,
             "groupList": [
                 {
-                    "groupTitle": "",
                     "itemList": [
                         {
                             "itemType": 2,
-                            "itemTitle": "Small Potion"
-                        },
-                        {
-                            "itemType": 2,
-                            "itemTitle": "Small Potion"
-                        },
-                        {
-                            "itemType": 2,
                             "itemTitle": "Beer"
                         },
                         {
@@ -129,15 +115,7 @@
                         },
                         {
                             "itemType": 2,
-                            "itemTitle": "Small Potion"
-                        },
-                        {
-                            "itemType": 2,
                             "itemTitle": "Beer"
-                        },
-                        {
-                            "itemType": 2,
-                            "itemTitle": "Small Potion"
                         },
                         {
                             "itemType": 2,
@@ -150,8 +128,25 @@
                         {
                             "itemType": 2,
                             "itemTitle": "Small Potion"
+                        },
+                        {
+                            "itemType": 2,
+                            "itemTitle": "Beer"
+                        },
+                        {
+                            "itemType": 2,
+                            "itemTitle": "Small Potion"
+                        },
+                        {
+                            "itemType": 2,
+                            "itemTitle": "Small Potion"
+                        },
+                        {
+                            "itemType": 2,
+                            "itemTitle": "Beer"
                         }
-                    ]
+                    ],
+                    "groupTitle": ""
                 }
             ]
         }

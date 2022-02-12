@@ -76,27 +76,3 @@ public class Inventory : MonoBehaviour
     }
 }
 
-[Serializable]
-public class InventorySaveObject
-{
-    public List<ItemSaveObject> items;
-
-    public InventorySaveObject()
-    {
-        items = new List<ItemSaveObject>();
-    }
-}
-
-[Serializable]
-public class ItemSaveObject
-{
-    public string itemTitle;
-    public string groupName;
-
-    public ItemSaveObject(string itemTitle, string groupName = null)
-    {
-        this.itemTitle = itemTitle;
-        this.groupName = groupName;
-    }
-}
-

@@ -5,15 +5,21 @@ using UnityEngine;
 public abstract class InvItem : MonoBehaviour
 {
     public ItemType itemType;
-    [Range(1,5)]
-    public int type = 1;
+    public Vector2Int typeRange;
+    public int type;
     public string title;
-    [Range(1,7)]
-    public int level = 1;
+    public Vector2Int levelRange;
+    public int level;
     public InvGroup currentGroup;
     public InvTab currentTab;
 
     public abstract string StatsToString();
+
+    protected virtual void GenerateStats()
+    {
+        type = Random.Range(typeRange.x, typeRange.y + 1);//max exclusive
+        level = Random.Range(levelRange.x, levelRange.y + 1);
+    }
 
     public void MoveToAnotherGroup(InvGroup anotherGroup)
     {
@@ -32,6 +38,7 @@ public abstract class InvItem : MonoBehaviour
     private void Start()
     {
         gameObject.name = title;
+        GenerateStats();
     }
 
 }

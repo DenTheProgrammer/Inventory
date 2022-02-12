@@ -13,10 +13,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
+  typeRange: {x: 1, y: 5}
   type: 1
   title: weapon_name
+  levelRange: {x: 1, y: 7}
   level: 1
+  currentGroup: {fileID: 0}
+  currentTab: {fileID: 0}
   equipped: 0
+  damageRange: {x: 1, y: 100}
   damage: 25
 --- !u!1001 &2107489297666304810
 PrefabInstance:

@@ -5,9 +5,14 @@ using System.Text;
 
 public class InvClothingItem : InvItem
 {
-    [Range(1, 100)]
-    public int protection = 55;
+    public Vector2Int protectionRange;
+    public int protection;
 
+    protected override void GenerateStats()
+    {
+        base.GenerateStats();
+        protection = Random.Range(protectionRange.x, protectionRange.y + 1);
+    }
     public override string StatsToString()
     {
         StringBuilder stringBuilder = new StringBuilder();
