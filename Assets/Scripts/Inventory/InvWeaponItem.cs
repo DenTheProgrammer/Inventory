@@ -5,8 +5,10 @@ using System.Text;
 
 public class InvWeaponItem : InvItem
 {
+    [HideInInspector]
     public bool equipped;
     public Vector2Int damageRange;
+    [HideInInspector]
     public int damage;
 
     protected override void GenerateStats()

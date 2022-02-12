@@ -6,6 +6,7 @@ using System.Text;
 public class InvConsumableItem : InvItem
 {
     public Vector2Int seedRange;
+    [HideInInspector]
     public int seed;
     protected override void GenerateStats()
     {

@@ -4,13 +4,17 @@ using UnityEngine;
 
 public abstract class InvItem : MonoBehaviour
 {
+    public string title;
     public ItemType itemType;
     public Vector2Int typeRange;
+    [HideInInspector]
     public int type;
-    public string title;
     public Vector2Int levelRange;
+    [HideInInspector]
     public int level;
+    [HideInInspector]
     public InvGroup currentGroup;
+    [HideInInspector]
     public InvTab currentTab;
 
     public abstract string StatsToString();

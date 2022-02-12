@@ -6,6 +6,7 @@ using System.Text;
 public class InvClothingItem : InvItem
 {
     public Vector2Int protectionRange;
+    [HideInInspector]
     public int protection;
 
     protected override void GenerateStats()
