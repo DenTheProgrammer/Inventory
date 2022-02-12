@@ -1,159 +1,633 @@
 {
-    "tabs": [
-        {
-            "tabType": 0,
-            "groupList": [
-                {
-                    "groupTitle": "",
-                    "itemList": [
-                        {
-                            "itemType": 0,
-                            "itemTitle": "Bow"
-                        },
-                        {
-                            "itemType": 0,
-                            "itemTitle": "Bow"
-                        },
-                        {
-                            "itemType": 0,
-                            "itemTitle": "Katana"
-                        },
-                        {
-                            "itemType": 0,
-                            "itemTitle": "Bow"
-                        },
-                        {
-                            "itemType": 0,
-                            "itemTitle": "Bow"
-                        },
-                        {
-                            "itemType": 0,
-                            "itemTitle": "Bow"
-                        },
-                        {
-                            "itemType": 0,
-                            "itemTitle": "Bow"
-                        },
-                        {
-                            "itemType": 0,
-                            "itemTitle": "Katana"
-                        },
-                        {
-                            "itemType": 0,
-                            "itemTitle": "Bow"
-                        },
-                        {
-                            "itemType": 0,
-                            "itemTitle": "Bow"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "tabType": 1,
-            "groupList": [
-                {
-                    "groupTitle": "Trash",
-                    "itemList": [
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Helmet"
-                        },
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Manticore Boots"
-                        },
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Manticore Boots"
-                        }
-                    ]
-                },
-                {
-                    "groupTitle": "",
-                    "itemList": [
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Helmet"
-                        },
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Helmet"
-                        },
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Helmet"
-                        },
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Helmet"
-                        },
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Manticore Boots"
-                        },
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Manticore Boots"
-                        },
-                        {
-                            "itemType": 1,
-                            "itemTitle": "Manticore Boots"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "tabType": 2,
-            "groupList": [
-                {
-                    "groupTitle": "",
-                    "itemList": [
-                        {
-                            "itemType": 2,
-                            "itemTitle": "Small Potion"
-                        },
-                        {
-                            "itemType": 2,
-                            "itemTitle": "Small Potion"
-                        },
-                        {
-                            "itemType": 2,
-                            "itemTitle": "Beer"
-                        },
-                        {
-                            "itemType": 2,
-                            "itemTitle": "Beer"
-                        },
-                        {
-                            "itemType": 2,
-                            "itemTitle": "Small Potion"
-                        },
-                        {
-                            "itemType": 2,
-                            "itemTitle": "Beer"
-                        },
-                        {
-                            "itemType": 2,
-                            "itemTitle": "Small Potion"
-                        },
-                        {
-                            "itemType": 2,
-                            "itemTitle": "Small Potion"
-                        },
-                        {
-                            "itemType": 2,
-                            "itemTitle": "Beer"
-                        },
-                        {
-                            "itemType": 2,
-                            "itemTitle": "Small Potion"
-                        }
-                    ]
-                }
-            ]
+  "$type": "InventorySaveObject, Assembly-CSharp",
+  "tabs": {
+    "$type": "System.Collections.Generic.List`1[[TabSaveObject, Assembly-CSharp]], mscorlib",
+    "$values": [
+      {
+        "$type": "TabSaveObject, Assembly-CSharp",
+        "tabTitle": "Weapons",
+        "tabType": 0,
+        "groupList": {
+          "$type": "System.Collections.Generic.List`1[[GroupSaveObject, Assembly-CSharp]], mscorlib",
+          "$values": [
+            {
+              "$type": "GroupSaveObject, Assembly-CSharp",
+              "groupTitle": "me",
+              "itemList": {
+                "$type": "System.Collections.Generic.List`1[[ItemSaveObject, Assembly-CSharp]], mscorlib",
+                "$values": [
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 55,
+                    "itemTitle": "Bow",
+                    "type": 1,
+                    "level": 7
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 73,
+                    "itemTitle": "Bow",
+                    "type": 5,
+                    "level": 1
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 100,
+                    "itemTitle": "Bow",
+                    "type": 3,
+                    "level": 5
+                  }
+                ]
+              }
+            },
+            {
+              "$type": "GroupSaveObject, Assembly-CSharp",
+              "groupTitle": null,
+              "itemList": {
+                "$type": "System.Collections.Generic.List`1[[ItemSaveObject, Assembly-CSharp]], mscorlib",
+                "$values": [
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 33,
+                    "itemTitle": "Katana",
+                    "type": 3,
+                    "level": 6
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 75,
+                    "itemTitle": "Katana",
+                    "type": 2,
+                    "level": 4
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 83,
+                    "itemTitle": "Katana",
+                    "type": 3,
+                    "level": 7
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 20,
+                    "itemTitle": "Katana",
+                    "type": 1,
+                    "level": 4
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 82,
+                    "itemTitle": "Katana",
+                    "type": 3,
+                    "level": 5
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 31,
+                    "itemTitle": "Katana",
+                    "type": 3,
+                    "level": 4
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 29,
+                    "itemTitle": "Katana",
+                    "type": 4,
+                    "level": 6
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 33,
+                    "itemTitle": "Bow",
+                    "type": 4,
+                    "level": 5
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 22,
+                    "itemTitle": "Katana",
+                    "type": 1,
+                    "level": 6
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 65,
+                    "itemTitle": "Katana",
+                    "type": 5,
+                    "level": 5
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 9,
+                    "itemTitle": "Bow",
+                    "type": 5,
+                    "level": 2
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 80,
+                    "itemTitle": "Katana",
+                    "type": 3,
+                    "level": 4
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 53,
+                    "itemTitle": "Katana",
+                    "type": 4,
+                    "level": 1
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 17,
+                    "itemTitle": "Bow",
+                    "type": 4,
+                    "level": 7
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 76,
+                    "itemTitle": "Bow",
+                    "type": 3,
+                    "level": 7
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 88,
+                    "itemTitle": "Katana",
+                    "type": 1,
+                    "level": 5
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 4,
+                    "itemTitle": "Bow",
+                    "type": 3,
+                    "level": 4
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 81,
+                    "itemTitle": "Bow",
+                    "type": 1,
+                    "level": 1
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 95,
+                    "itemTitle": "Katana",
+                    "type": 5,
+                    "level": 2
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 3,
+                    "itemTitle": "Katana",
+                    "type": 3,
+                    "level": 2
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 13,
+                    "itemTitle": "Bow",
+                    "type": 3,
+                    "level": 4
+                  },
+                  {
+                    "$type": "WeaponItemSaveObject, Assembly-CSharp",
+                    "equipped": false,
+                    "damage": 48,
+                    "itemTitle": "Katana",
+                    "type": 4,
+                    "level": 6
+                  }
+                ]
+              }
+            }
+          ]
         }
+      },
+      {
+        "$type": "TabSaveObject, Assembly-CSharp",
+        "tabTitle": "Clothing",
+        "tabType": 1,
+        "groupList": {
+          "$type": "System.Collections.Generic.List`1[[GroupSaveObject, Assembly-CSharp]], mscorlib",
+          "$values": [
+            {
+              "$type": "GroupSaveObject, Assembly-CSharp",
+              "groupTitle": "Boots",
+              "itemList": {
+                "$type": "System.Collections.Generic.List`1[[ItemSaveObject, Assembly-CSharp]], mscorlib",
+                "$values": [
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 97,
+                    "itemTitle": "Manticore Boots",
+                    "type": 2,
+                    "level": 6
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 48,
+                    "itemTitle": "Manticore Boots",
+                    "type": 1,
+                    "level": 6
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 22,
+                    "itemTitle": "Manticore Boots",
+                    "type": 2,
+                    "level": 7
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 56,
+                    "itemTitle": "Manticore Boots",
+                    "type": 2,
+                    "level": 5
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 42,
+                    "itemTitle": "Manticore Boots",
+                    "type": 5,
+                    "level": 7
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 1,
+                    "itemTitle": "Manticore Boots",
+                    "type": 2,
+                    "level": 4
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 70,
+                    "itemTitle": "Manticore Boots",
+                    "type": 5,
+                    "level": 6
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 81,
+                    "itemTitle": "Manticore Boots",
+                    "type": 1,
+                    "level": 2
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 99,
+                    "itemTitle": "Manticore Boots",
+                    "type": 2,
+                    "level": 5
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 11,
+                    "itemTitle": "Manticore Boots",
+                    "type": 1,
+                    "level": 7
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 35,
+                    "itemTitle": "Manticore Boots",
+                    "type": 4,
+                    "level": 6
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 80,
+                    "itemTitle": "Manticore Boots",
+                    "type": 2,
+                    "level": 1
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 52,
+                    "itemTitle": "Manticore Boots",
+                    "type": 1,
+                    "level": 3
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 86,
+                    "itemTitle": "Manticore Boots",
+                    "type": 1,
+                    "level": 6
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 11,
+                    "itemTitle": "Manticore Boots",
+                    "type": 5,
+                    "level": 1
+                  }
+                ]
+              }
+            },
+            {
+              "$type": "GroupSaveObject, Assembly-CSharp",
+              "groupTitle": null,
+              "itemList": {
+                "$type": "System.Collections.Generic.List`1[[ItemSaveObject, Assembly-CSharp]], mscorlib",
+                "$values": [
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 48,
+                    "itemTitle": "Helmet",
+                    "type": 1,
+                    "level": 1
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 29,
+                    "itemTitle": "Helmet",
+                    "type": 1,
+                    "level": 1
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 42,
+                    "itemTitle": "Helmet",
+                    "type": 4,
+                    "level": 7
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 97,
+                    "itemTitle": "Helmet",
+                    "type": 2,
+                    "level": 3
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 12,
+                    "itemTitle": "Helmet",
+                    "type": 3,
+                    "level": 2
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 8,
+                    "itemTitle": "Helmet",
+                    "type": 1,
+                    "level": 6
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 82,
+                    "itemTitle": "Helmet",
+                    "type": 1,
+                    "level": 4
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 19,
+                    "itemTitle": "Helmet",
+                    "type": 1,
+                    "level": 5
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 58,
+                    "itemTitle": "Helmet",
+                    "type": 2,
+                    "level": 6
+                  },
+                  {
+                    "$type": "ClothingItemSaveObject, Assembly-CSharp",
+                    "protection": 87,
+                    "itemTitle": "Helmet",
+                    "type": 3,
+                    "level": 1
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "$type": "TabSaveObject, Assembly-CSharp",
+        "tabTitle": "Consumables",
+        "tabType": 2,
+        "groupList": {
+          "$type": "System.Collections.Generic.List`1[[GroupSaveObject, Assembly-CSharp]], mscorlib",
+          "$values": [
+            {
+              "$type": "GroupSaveObject, Assembly-CSharp",
+              "groupTitle": null,
+              "itemList": {
+                "$type": "System.Collections.Generic.List`1[[ItemSaveObject, Assembly-CSharp]], mscorlib",
+                "$values": [
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 77330,
+                    "itemTitle": "Small Potion",
+                    "type": 2,
+                    "level": 3
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 94684,
+                    "itemTitle": "Small Potion",
+                    "type": 4,
+                    "level": 3
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 26294,
+                    "itemTitle": "Beer",
+                    "type": 5,
+                    "level": 2
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 38,
+                    "itemTitle": "Small Potion",
+                    "type": 1,
+                    "level": 4
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 50265,
+                    "itemTitle": "Small Potion",
+                    "type": 2,
+                    "level": 4
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 47438,
+                    "itemTitle": "Small Potion",
+                    "type": 3,
+                    "level": 4
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 34430,
+                    "itemTitle": "Small Potion",
+                    "type": 2,
+                    "level": 3
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 64240,
+                    "itemTitle": "Small Potion",
+                    "type": 2,
+                    "level": 7
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 69564,
+                    "itemTitle": "Small Potion",
+                    "type": 5,
+                    "level": 5
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 81256,
+                    "itemTitle": "Beer",
+                    "type": 5,
+                    "level": 4
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 77528,
+                    "itemTitle": "Small Potion",
+                    "type": 2,
+                    "level": 4
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 30014,
+                    "itemTitle": "Small Potion",
+                    "type": 4,
+                    "level": 7
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 14224,
+                    "itemTitle": "Beer",
+                    "type": 3,
+                    "level": 5
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 74179,
+                    "itemTitle": "Beer",
+                    "type": 5,
+                    "level": 1
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 88573,
+                    "itemTitle": "Small Potion",
+                    "type": 3,
+                    "level": 7
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 61043,
+                    "itemTitle": "Small Potion",
+                    "type": 1,
+                    "level": 2
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 45305,
+                    "itemTitle": "Small Potion",
+                    "type": 5,
+                    "level": 6
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 73325,
+                    "itemTitle": "Beer",
+                    "type": 5,
+                    "level": 2
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 8128,
+                    "itemTitle": "Beer",
+                    "type": 2,
+                    "level": 6
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 97831,
+                    "itemTitle": "Beer",
+                    "type": 4,
+                    "level": 3
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 46032,
+                    "itemTitle": "Small Potion",
+                    "type": 5,
+                    "level": 2
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 28228,
+                    "itemTitle": "Small Potion",
+                    "type": 3,
+                    "level": 3
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 66398,
+                    "itemTitle": "Small Potion",
+                    "type": 5,
+                    "level": 6
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 11343,
+                    "itemTitle": "Beer",
+                    "type": 1,
+                    "level": 1
+                  },
+                  {
+                    "$type": "ConsumableItemSaveObject, Assembly-CSharp",
+                    "seed": 32851,
+                    "itemTitle": "Beer",
+                    "type": 3,
+                    "level": 5
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
     ]
+  }
 }

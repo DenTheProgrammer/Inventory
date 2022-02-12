@@ -19,4 +19,26 @@ public class InvClothingItem : InvItem
         stringBuilder.Append($"Type - {type}\nLvL - {level}\nProtection - {protection}\n");
         return stringBuilder.ToString();
     }
+
+    public override ItemSaveObject CreateSaveObject()
+    {
+        return new ClothingItemSaveObject(title, type, level, protection);
+    }
+
+    public override void LoadFromSaveObject(ItemSaveObject saveObject)
+    {
+        base.LoadFromSaveObject(saveObject);
+        ClothingItemSaveObject clothingItemSaveObject = (ClothingItemSaveObject)saveObject;
+        protection = clothingItemSaveObject.protection;
+    }
+}
+
+[System.Serializable]
+public class ClothingItemSaveObject : ItemSaveObject
+{
+    public int protection;
+    public ClothingItemSaveObject(string itemTitle, int type, int level, int protection) : base(itemTitle, type, level)
+    {
+        this.protection = protection;
+    }
 }

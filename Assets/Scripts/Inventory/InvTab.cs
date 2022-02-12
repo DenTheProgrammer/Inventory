@@ -6,7 +6,7 @@ using TMPro;
 
 public class InvTab : MonoBehaviour
 {
-    public string displayName;
+    public string tabTitle;
     public ItemType tabType; //same type as Items in it
     public Vector3 nextEmptySlot;
     public InvGroupDefault defaultGroup;
@@ -16,9 +16,9 @@ public class InvTab : MonoBehaviour
 
     private void Awake()
     {
-        gameObject.name = displayName;
+        gameObject.name = tabTitle;
         groups = new Dictionary<string, InvGroupNamed>();
-        GetComponentInChildren<TextMeshProUGUI>().text = displayName;
+        GetComponentInChildren<TextMeshProUGUI>().text = tabTitle;
         if (defaultGroup == null)
         {
             GameObject groupDefault = Instantiate(groupPrefab);
@@ -119,7 +119,7 @@ public class InvTab : MonoBehaviour
     }
     public void LogTab()
     {
-        Debug.Log($"Tab \"{displayName}\":");
+        Debug.Log($"Tab \"{tabTitle}\":");
         if (groups == null) return;
         foreach (KeyValuePair<string, InvGroupNamed> entry in groups)
         {
