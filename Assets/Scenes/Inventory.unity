@@ -2794,12 +2794,15 @@ MonoBehaviour:
   weaponPrefabs:
   - {fileID: 1532617340045361415, guid: 11ccd7aacfcbdcd49bcdf373397db78c, type: 3}
   - {fileID: 1532617340045361415, guid: c2d2d296b4fcf1c4ab79dcc490059b27, type: 3}
+  - {fileID: 1532617340045361415, guid: 98b00cc8cea678b4dabfd6ceb05aa8ea, type: 3}
   clothingPrefabs:
   - {fileID: 462111081774368625, guid: 59310cafb59014748b9b77fd5f87a17b, type: 3}
   - {fileID: 462111081774368625, guid: 32b98dda833531b4fbb6978bdf746f4f, type: 3}
+  - {fileID: 462111081774368625, guid: e11fe164f8372f64c9e7dc23b3172bfa, type: 3}
   consumablePrefabs:
   - {fileID: 4777222303341859239, guid: 37bfecb0ebd558745b49c7747c8de530, type: 3}
   - {fileID: 4777222303341859239, guid: 2497adfb5dbc3354b902e93c52b5026a, type: 3}
+  - {fileID: 4777222303341859239, guid: a52d1f981c6d17c409b904349ebbec94, type: 3}
 --- !u!224 &1576430942 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7159762981681016616, guid: ca117a4c8708ffd42828547076324022, type: 3}

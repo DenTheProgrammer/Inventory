@@ -53,7 +53,7 @@ public class Inventory : MonoBehaviour
 
     public void DrawInventory()
     {
-        Debug.LogWarning("Drawing Inventory");
+        //Debug.LogWarning("Drawing Inventory");
         activeTab.DrawTab();
         //LogInventory();
     }
